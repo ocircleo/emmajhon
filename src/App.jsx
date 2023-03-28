@@ -1,11 +1,8 @@
-import Sort from './assets/sort.jsx'
-import hddsfdkjaakajfkljfaello from './Hello.jsx'
-import 
+import React from "react"
 function App() {
   return (
     <>
-      <Hello />
-      <Sort />
+      
     </>
   )
 }
