@@ -55,5 +55,5 @@
     background-color: tomato;
 }
 .card button:active{
-    background-color: orange;
+    scale: 1.1;
 }
