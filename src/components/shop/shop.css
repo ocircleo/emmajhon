@@ -7,62 +7,9 @@
     grid-column: span 3;
     padding: 30px;
 }
-
-.shop-sapn {
-    grid-column: span 1;
-    background-color: aliceblue;
-}
-
-.cart-container {
-    background-color: rgba(255, 153, 0, 0.3);
-    position: sticky;
-    top: 0;
-    height: 100vh;
-}
-
 .products {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-}
-
-.cart-container h2 {
-    text-align: center;
-    padding: 30px 0;
-}
-
-.cart-container p {
-    padding: 10px 30px;
-}
-
-.cart-container h3 {
-    padding: 10px 30px;
-    margin-bottom: 40px;
-}
-
-.cart-container button {
-    width: 80%;
-    height: 46px;
-    margin: 5px 10%;
-    border-radius: 5px;
-    font-size: 19px;
-    color: rgba(255, 255, 255, 1);
-    cursor: pointer;
-    border: none;
-    transition: .3s;
-}
-
-.cart-container button:active {
-    transform: scale(1.1);
-}
-
-.cart-btn1 {
-    background-color: rgba(255, 48, 48, 1);
-
-
-}
-
-.cart-btn2 {
-    background-color: rgba(255, 153, 0, 1);
 }
