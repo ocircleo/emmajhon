@@ -17,3 +17,6 @@ gap: 30px;
     text-transform: capitalize;
     color: white;
 }
+.header-link a:hover{
+    color: orange;
+}
