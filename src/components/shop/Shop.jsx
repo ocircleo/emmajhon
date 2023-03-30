@@ -23,7 +23,6 @@ const Shop = () => {
                 addedCart.push(savedProduct)
             }
         }
-        console.log(addedCart)
         setCart(addedCart)
     }, [products])
 

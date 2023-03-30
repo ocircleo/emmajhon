@@ -5,10 +5,12 @@ const Cart = ({ cart }) => {
     let totalShiping = 0;
     let quantity = 0;
     for (const product of cart) {
-        total = total + product.price
-        totalShiping = totalShiping + product.shipping
+        product.quantity = product.quantity || 1
+        total = total + product.price * product.quantity
+        totalShiping = totalShiping + product.shipping * product.quantity;
         quantity = quantity + product.quantity;
     }
+    console.log(quantity)
     let tax = (total * 7) / 100;
     let grandTotal = total + totalShiping + tax;
     return (
@@ -16,7 +18,7 @@ const Cart = ({ cart }) => {
             <div className='shop-sapn'>
                 <div className="cart-container">
                     <h2>Order summery</h2>
-                    <p>selected items: {cart.length}</p>
+                    <p>selected items: {quantity}</p>
                     <p>total price:{total}</p>
                     <p>total shiping charge: {totalShiping}</p>
                     <p>tax: {tax.toFixed(2)}</p>
