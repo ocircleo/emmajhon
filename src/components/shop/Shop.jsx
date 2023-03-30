@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './shop.css'
 import Product from '../products/Products'
 import Cart from '../cart/Cart';
-import { AddToDb, Con } from '../utilities/LocalDb.jsx'
+import { AddToDb, Con, GetShoppingCart } from '../utilities/LocalDb.jsx'
 const Shop = () => {
     const [products, setproducts] = useState([]);
     const [cart, setCart] = useState([]);
@@ -10,12 +10,25 @@ const Shop = () => {
         fetch('./products.json')
             .then(res => res.json())
             .then(data => setproducts(data))
+
     }, [])
     useEffect(() => {
-        const localCart = localStorage.getItem('shoping-cart')
-        console.log(localCart)
-    },[])
-    const handelAddToCart = (para, id) => {
+        const addedCart = []
+        const localCart = GetShoppingCart();
+        for (const id in localCart) {
+            const savedProduct = products.find(element => element.id === id);
+            if (savedProduct) {
+                const quantity = localCart[id];
+                savedProduct.quantity = quantity;
+                addedCart.push(savedProduct)
+            }
+
+        }
+        console.log(addedCart)
+        setCart(addedCart)
+    }, [products])
+
+    const handelAddToCart = (para) => {
         const newCart = [...cart, para]
         setCart(newCart)
         AddToDb(para.id)
